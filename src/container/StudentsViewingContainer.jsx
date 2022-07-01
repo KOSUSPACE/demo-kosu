@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { courses, sugestedCourses } from "../data/student-viewing-data/data";
 
@@ -6,19 +6,23 @@ import Course from "../components/course/Course";
 
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+} from "@fortawesome/free-solid-svg-icons";
 
-import { useState } from "react";
+import { useState } from 'react';
 import ItemsCarousel from "react-items-carousel";
+
 
 const Container = styled.div`
   margin-top: 6.4rem;
   padding-right: 2.4rem;
   padding-left: 2.4rem;
-  max-width: 1340px;
+  max-width:1340px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left:20px;
+  padding-right:20px;
 `;
 const CoursesList = styled.div`
   margin-top: 4.8rem;
@@ -35,9 +39,11 @@ const StudentsViewingTitle = styled.h2`
   font-size: 2.4rem;
   letter-spacing: -0.02rem;
   line-height: 1.2;
+
 `;
 const CourseWrapper = styled.div`
   position: relative;
+  
 `;
 const Arrow = styled.div`
   width: 4.8rem;
@@ -69,54 +75,41 @@ const CopyStudentsViewingContainer = () => {
   const [activeItemIndex1, setActiveItemIndex1] = useState(0);
   const [activeItemIndex2, setActiveItemIndex2] = useState(0);
   const chevronWidth = 50;
-  const [numberOfCards, setNumberOfCards] = useState(5);
-  useEffect(() => {
-    if (window.innerWidth < 576) {
-      setNumberOfCards(1);
-    } else if (window.innerWidth > 576 && window.innerWidth < 1024) {
-      setNumberOfCards(3);
-    }
-  }, []);
+
   return (
     <Container>
       <CoursesList>
         <StudentsViewingTitle>Most Viewed</StudentsViewingTitle>
 
-        <CourseWrapper>
-          <ItemsCarousel
-            requestToChangeActive={setActiveItemIndex1}
-            activeItemIndex={activeItemIndex1}
-            numberOfCards={numberOfCards}
-            gutter={20}
-            infiniteLoop
-            leftChevron={
-              <Arrow direction="left">
-                {
-                  <FontAwesomeIcon
-                    style={{ color: "white", fontSize: "2rem" }}
-                    icon={faAngleLeft}
-                  />
-                }
-              </Arrow>
-            }
-            rightChevron={
-              <Arrow direction="right">
-                {
-                  <FontAwesomeIcon
-                    style={{ color: "white", fontSize: "2rem" }}
-                    icon={faAngleRight}
-                  />
-                }
-              </Arrow>
-            }
-            outsideChevron={false}
-            chevronWidth={chevronWidth}
-          >
-            {courses.map((item) => (
-              <Course item={item} key={item.id} />
-            ))}
-          </ItemsCarousel>
+        <CourseWrapper>       
+            <ItemsCarousel
+              requestToChangeActive={setActiveItemIndex1}
+              activeItemIndex={activeItemIndex1}
+              numberOfCards={5}
+              gutter={15}
+              leftChevron={<Arrow direction="left">{ 
+                              <FontAwesomeIcon
+                                style={{ color: "white", fontSize: "2rem" }}
+                                icon={faAngleLeft}
+                              />}
+                          </Arrow>}
+              rightChevron={<Arrow direction="right">{ 
+                              <FontAwesomeIcon
+                                style={{ color: "white", fontSize: "2rem" }}
+                                icon={faAngleRight}
+                              />}
+                            </Arrow>}
+              outsideChevron={false}
+              chevronWidth={chevronWidth}
+            >
+      
+                {courses.map((item) => (
+                    <Course item={item} key={item.id} />
+                ))}
+
+            </ItemsCarousel>
         </CourseWrapper>
+
       </CoursesList>
 
       <CoursesList>
@@ -124,42 +117,36 @@ const CopyStudentsViewingContainer = () => {
           Because you searched for{" "}
           <span style={{ color: "purple" }}>"Learn Blockchain"</span>{" "}
         </StudentsViewingTitle>
+       
+        <CourseWrapper>       
+            <ItemsCarousel
+              requestToChangeActive={setActiveItemIndex2}
+              activeItemIndex={activeItemIndex2}
+              numberOfCards={5}
+              gutter={15}
+              leftChevron={<Arrow direction="left">{ 
+                              <FontAwesomeIcon
+                                style={{ color: "white", fontSize: "2rem" }}
+                                icon={faAngleLeft}
+                              />}
+                          </Arrow>}
+              rightChevron={<Arrow direction="right">{ 
+                              <FontAwesomeIcon
+                                style={{ color: "white", fontSize: "2rem" }}
+                                icon={faAngleRight}
+                              />}
+                            </Arrow>}
+              outsideChevron={false}
+              chevronWidth={chevronWidth}
+            >
+      
+                {sugestedCourses.map((item) => (
+                    <Course item={item} key={item.id} />
+                ))}
 
-        <CourseWrapper>
-          <ItemsCarousel
-            infiniteLoop
-            requestToChangeActive={setActiveItemIndex2}
-            activeItemIndex={activeItemIndex2}
-            numberOfCards={numberOfCards}
-            gutter={20}
-            leftChevron={
-              <Arrow direction="left">
-                {
-                  <FontAwesomeIcon
-                    style={{ color: "white", fontSize: "2rem" }}
-                    icon={faAngleLeft}
-                  />
-                }
-              </Arrow>
-            }
-            rightChevron={
-              <Arrow direction="right">
-                {
-                  <FontAwesomeIcon
-                    style={{ color: "white", fontSize: "2rem" }}
-                    icon={faAngleRight}
-                  />
-                }
-              </Arrow>
-            }
-            outsideChevron={false}
-            chevronWidth={chevronWidth}
-          >
-            {sugestedCourses.map((item) => (
-              <Course item={item} key={item.id} />
-            ))}
-          </ItemsCarousel>
+            </ItemsCarousel>
         </CourseWrapper>
+  
       </CoursesList>
     </Container>
   );

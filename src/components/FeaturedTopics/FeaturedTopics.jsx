@@ -30,19 +30,11 @@ const FeaturedTopicsContain = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
-  @media (max-width: 576px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
 `;
 const FeaturedTopicsCategory = styled.div`
   padding-right: 0.8rem;
   margin-bottom: 2.4rem;
   width: calc(100% / 4 - 1.6rem);
-  @media (max-width: 576px) {
-    width: 100%;
-  }
 `;
 const FeaturedTopicsTitle = styled.h2`
   margin-bottom: 2.4rem;
@@ -83,7 +75,9 @@ const FeaturedTopics = () => {
                 <div>
                   <FeaturedTopicsLink href="#">Python</FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>40,000 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  40,000 KXP
+                </FeaturedTopicsStudents>
               </div>
               <FeaturedTopicsTopic>
                 <div>
@@ -91,7 +85,9 @@ const FeaturedTopics = () => {
                     Web Development
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>17,872 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  17,872 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
               <FeaturedTopicsTopic>
                 <div>
@@ -99,7 +95,9 @@ const FeaturedTopics = () => {
                     Blockchain Apps
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>35,995 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  35,995 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
             </div>
           </FeaturedTopicsCategory>
@@ -113,21 +111,25 @@ const FeaturedTopics = () => {
                     Financial Analysis
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>42,265 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  42,265 KXP
+                </FeaturedTopicsStudents>
               </div>
               <FeaturedTopicsTopic>
                 <div>
-                  <FeaturedTopicsLink href="#">
-                    Food & Beverage
-                  </FeaturedTopicsLink>
+                  <FeaturedTopicsLink href="#">Food & Beverage</FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>99,930 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  99,930 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
               <FeaturedTopicsTopic>
                 <div>
                   <FeaturedTopicsLink href="#">Real Estate</FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>80,869 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  80,869 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
             </div>
           </FeaturedTopicsCategory>
@@ -141,7 +143,9 @@ const FeaturedTopics = () => {
                     AWS Certification
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>62,105 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  62,105 KXP
+                </FeaturedTopicsStudents>
               </div>
               <FeaturedTopicsTopic>
                 <div>
@@ -149,7 +153,9 @@ const FeaturedTopics = () => {
                     Linux Command Line
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>88,537 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  88,537 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
               <FeaturedTopicsTopic>
                 <div>
@@ -157,7 +163,9 @@ const FeaturedTopics = () => {
                     Cyber Security
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>14,347 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  14,347 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
             </div>
           </FeaturedTopicsCategory>
@@ -169,7 +177,9 @@ const FeaturedTopics = () => {
                 <div>
                   <FeaturedTopicsLink href="#">Photoshop</FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>67,011 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  67,011 KXP
+                </FeaturedTopicsStudents>
               </div>
               <FeaturedTopicsTopic>
                 <div>
@@ -177,20 +187,26 @@ const FeaturedTopics = () => {
                     Graphic Design
                   </FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>71,160 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  71,160 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
               <FeaturedTopicsTopic>
                 <div>
                   <FeaturedTopicsLink href="#">Drawing</FeaturedTopicsLink>
                 </div>
-                <FeaturedTopicsStudents>41,110 KXP</FeaturedTopicsStudents>
+                <FeaturedTopicsStudents>
+                  41,110 KXP
+                </FeaturedTopicsStudents>
               </FeaturedTopicsTopic>
             </div>
           </FeaturedTopicsCategory>
+          
+
+          <LinkButton color="white" height="4.8rem">
+            Explore More Topics
+          </LinkButton>
         </FeaturedTopicsContain>
-        <LinkButton color="white" height="4.8rem">
-          Explore More Topics
-        </LinkButton>
       </FeaturedTopicsSection>
     </FeaturedTopicsContainer>
   );
