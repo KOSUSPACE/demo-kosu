@@ -5,7 +5,7 @@ import LinkButton from "../share/UIElements/LinkButton/LinkButton";
 import { pythonData } from "../data/course-selection-data/data";
 import { learnlangData } from "../data/course-selection-data/data";
 import { foodbevData } from "../data/course-selection-data/data";
-import { guitarData} from "../data/course-selection-data/data";
+import { guitarData } from "../data/course-selection-data/data";
 import { beautyData } from "../data/course-selection-data/data";
 const initState = {
   name: "Python",
@@ -39,7 +39,8 @@ const contentReducer = (state, action) => {
     case "BeautyMakeup":
       return {
         name: "Beauty & Makeup",
-        title: "Learn what it takes to make your entry into the beauty industry",
+        title:
+          "Learn what it takes to make your entry into the beauty industry",
         description:
           "The beauty industry encompasses sales of cosmetics, perfume, and products for skin and hair care. Worldwide sales of beauty-related products and services are estimated to be in excess of $159 billion US dollars each year. Most research shows that sales to women account for a huge majority of the sum.",
       };
@@ -65,8 +66,8 @@ const CourseSelectionContainer = () => {
     <>
       <H1>Learn & Earn Anything, 🆓:</H1>
       <Subtitle>
-        Choose from many online video courses and creators with new additions minted
-        weekly 🎉 
+        Choose from many online video courses and creators with new additions
+        minted weekly 🎉
       </Subtitle>
       <ButtonContainer>
         <Button
@@ -110,7 +111,9 @@ const CourseSelectionContainer = () => {
         </ExplanationContainer>
         <SliderContainer>
           {triggerElement === "Python" && <Carousel data={pythonData} />}
-          {triggerElement === "LearnLanguage" && <Carousel data={learnlangData} />}
+          {triggerElement === "LearnLanguage" && (
+            <Carousel data={learnlangData} />
+          )}
           {triggerElement === "Guitar" && <Carousel data={guitarData} />}
           {triggerElement === "BeautyMakeup" && <Carousel data={beautyData} />}
           {triggerElement === "FoodBeverage" && <Carousel data={foodbevData} />}
@@ -126,10 +129,10 @@ const BorderStyle = styled.div`
   border-color: #c4c4c4;
   padding: 2rem;
   margin: 2rem 2.4rem;
-  max-width:1340px;
+  max-width: 1340px;
   margin: 50px auto 0;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const H1 = styled.h1`
@@ -139,10 +142,10 @@ const H1 = styled.h1`
   padding: 6rem 0 0.8rem;
   margin-left: 2.4rem;
   letter-spacing: 0.5px;
-  max-width:1340px;
+  max-width: 1340px;
   margin: 0 auto;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const ExplanationContainer = styled.div`
@@ -162,18 +165,21 @@ const Subtitle = styled.p`
   padding: 0.8rem 0;
   margin-left: 2.4rem;
   margin-bottom: 1rem;
-  max-width:1340px;
+  max-width: 1340px;
   margin: 0 auto;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 const ButtonContainer = styled.div`
   margin-left: 2.4rem;
-  max-width:1340px;
+  max-width: 1340px;
   margin: 0 auto;
-  padding-left:20px;
-  padding-right:20px;
-  padding-top:20px
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  @media (max-width: 576px) {
+    display: grid;
+  }
 `;
 
 const Button = styled.button`
@@ -185,8 +191,12 @@ const Button = styled.button`
   font-weight: bold;
   margin-right: 2rem;
   cursor: pointer;
-  &:hover {
-    color: #000;
+
+  @media (max-width: 576px) {
+    /* margin: 0.5rem 0; */
+    padding: 0.5rem;
+    background-color: ${(props) => (props.isActive ? "black" : "transparent")};
+    color: ${(props) => (props.isActive ? "white" : "#787878")};
   }
 `;
 
@@ -199,4 +209,3 @@ const SliderContainer = styled.div`
   margin: 2rem;
 `;
 export default CourseSelectionContainer;
-
